@@ -43,9 +43,9 @@ $langs->load("companies");
 $langs->load("bills");
 
 $action=GETPOST('action', 'alpha');
-$id=GETPOST('account','int');
+$id=(int)GETPOST('account','int');
 $ref=GETPOST('ref','alpha');
-$dvid=GETPOST('dvid','int');
+$dvid=(int)GETPOST('dvid','int');
 $num=GETPOST('num','alpha');
 
 // Security check
@@ -75,7 +75,7 @@ if ($user->rights->banque->consolidate && $action == 'dvprev' && ! empty($dvid))
 
 $sortfield = GETPOST('sortfield', 'alpha');
 $sortorder = GETPOST('sortorder', 'alpha');
-$page = GETPOST('page', 'int');
+$page = (int)GETPOST('page', 'int');
 if ($page == -1) { $page = 0; }
 if (! $sortorder) $sortorder="ASC";
 if (! $sortfield) $sortfield="s.nom";
