@@ -389,7 +389,7 @@ else
 			print '<td class="nowrap">'.$type_label.' '.($objp->num_chq?$objp->num_chq:'').'</td>';
 
 			// Description
-			print '<td valign="center"><a href="'.DOL_URL_ROOT.'/compta/bank/ligne.php?rowid='.$objp->rowid.'&amp;account='.$acct->id.'">';
+			print '<td valign="center"><a href="'.DOL_URL_ROOT.'/compta/bank/line.php?rowid='.$objp->rowid.'&amp;account='.$acct->id.'">';
 			$reg=array();
 			preg_match('/\((.+)\)/i',$objp->label,$reg);	// Si texte entoure de parenthese on tente recherche de traduction
 			if ($reg[1] && $langs->trans($reg[1])!=$reg[1]) print $langs->trans($reg[1]);
@@ -652,7 +652,7 @@ function printStandardValues(&$db, &$user, &$langs, &$acct, &$objp, &$num, &$tot
 	print '<td class="standard_td nowrap">'.$type_label.' '.($objp->num_chq?$objp->num_chq:'').'</td>';
 
 	// Description
-	print '<td valign="center" class="standard_td nowrap"><a href="'.DOL_URL_ROOT.'/compta/bank/ligne.php?rowid='.$objp->rowid.'&amp;account='.$acct->id.'">';
+	print '<td valign="center" class="standard_td nowrap"><a href="'.DOL_URL_ROOT.'/compta/bank/line.php?rowid='.$objp->rowid.'&amp;account='.$acct->id.'">';
 	$reg=array();
 	preg_match('/\((.+)\)/i',$objp->label,$reg);	// Si texte entoure de parenthese on tente recherche de traduction
 	if ($reg[1] && $langs->trans($reg[1])!=$reg[1]) print $langs->trans($reg[1]);
@@ -840,7 +840,7 @@ function printStandardValues(&$db, &$user, &$langs, &$acct, &$objp, &$num, &$tot
 
 	if ($user->rights->banque->modifier || $user->rights->banque->consolidate)
 	{
-		print '<td align="center"><a href="'.DOL_URL_ROOT.'/compta/bank/ligne.php?rowid='.$objp->rowid.'&amp;account='.$acct->id.'">';
+		print '<td align="center"><a href="'.DOL_URL_ROOT.'/compta/bank/line.php?rowid='.$objp->rowid.'&amp;account='.$acct->id.'">';
 		print img_edit();
 		print "</a></td>";
 	}
